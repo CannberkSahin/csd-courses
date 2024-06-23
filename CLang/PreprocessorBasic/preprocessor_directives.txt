@@ -1,0 +1,47 @@
+Preprocessor Directives (Önişlemci Programı Direktifleri)
+=========================================================
+# (null directive)
+# include
+# define
+# undef
+# if
+# endif
+# elif
+# else
+# ifdef
+# ifndef 
+# line
+# error
+# pragma
+
+# include komutu header file'daki bildirimleri kaynak
+dosyaya yapıştırmaktadır. Komutun iki farkı kullanım 
+biçimi vardır. Birinci kullanım biçimi dosyanın ismi
+açısal parantez içinde yazılır:
+#include <stdio.h> => angular bracket 
+İkinci kullanım biçimi dosyanın ismi çift tırnak içinde
+yazılır:
+#include "utility.h"
+
+İki yazım biçimi arasında bir fark var mıdır?  
+
+Fark bulunmaktadır. Ancak fark yapılan kopyalama yapıştırma
+işinde değildir. Farklılık, kodun okunması ve derleyicinin 
+header dosyasının nerede arayacağı arasında vardır.
+Açısal parantezin anlamı derleyici tarafından programcının
+kullanımına verilmiş yani derleyiciye gömülü olan kodların
+bulunduğu başlık dosyalarının anlamına gelmektedir. C 
+dilindeki standart başlık dosyaları açısal parantez içinde
+yazılmaktadır. Ancak tipik farklılık kodun okunması ve 
+anlaşılması dışında bu dosyaların ön işlemci programı 
+tarafından nerede aranacağıdır. Eğer açısal parantez içerisinde
+bir dosya include edilirse ön işlemci program bu dosyayı önce
+default directory denlen önceden IDE program tarafından seçilmiş
+bir dizinde arar. Tipik olarak bu dizin simi include olan bir 
+directory'dir. Ancak dosya çift tırnak içinde include edilmişse
+ön işlemci program bu dosyayı actual directory denilen güncel 
+dizinde arar. Güncel dizin, dosyayı include eden .c dosyasının
+yani örneğin main.c dosyasının bulunudğu klasördür. Eğer güncel
+dizinde bulamazsa ön işlemci program actual directory'nin parent
+directory'lerine de bakar.
+
